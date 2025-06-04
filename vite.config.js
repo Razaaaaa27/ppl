@@ -4,20 +4,12 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [vue()],
+  root: '.',
   base: './',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './frontend'),
     },
-  },
-  server: {
-    proxy: {
-      '/api': {
-        target: process.env.VITE_API_URL || 'http://localhost:5000',
-        changeOrigin: true,
-        secure: false
-      }
-    }
   },
   build: {
     outDir: 'dist',
@@ -26,10 +18,22 @@ export default defineConfig({
     minify: true,
     chunkSizeWarningLimit: 1500,
     rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html')
+      },
       output: {
         manualChunks: {
           vendor: ['vue', 'vue-router', 'vuex'],
         }
+      }
+    }
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false
       }
     }
   }
