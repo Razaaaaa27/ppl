@@ -9,7 +9,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './frontend'),
-    },
+      '@components': path.resolve(__dirname, './frontend/components'),
+      '@views': path.resolve(__dirname, './frontend/views'),
+      '@assets': path.resolve(__dirname, './frontend/assets'),
+      '@store': path.resolve(__dirname, './frontend/store'),
+      '@router': path.resolve(__dirname, './frontend/router'),
+      '@services': path.resolve(__dirname, './frontend/services')
+    }
   },
   build: {
     outDir: 'dist',
