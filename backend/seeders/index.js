@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 const User = require('../models/User');
-const Challenge = require('../models/challenge');
+const Challenge = require('../models/Challenge');
 const EduContent = require('../models/EduContent');
 const Forest = require('../models/Forest');
 

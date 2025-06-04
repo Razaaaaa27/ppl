@@ -2,7 +2,7 @@
 
 const express = require('express');
 const User = require('../models/User');
-const Challenge = require('../models/challenge');
+const Challenge = require('../models/Challenge');
 const Post = require('../models/Post');
 const EduContent = require('../models/EduContent');
 const Forest = require('../models/Forest');
